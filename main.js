@@ -8,13 +8,10 @@ $(document).ready(function(){
     $('#limpar').click(function(){
         $('form').slideUp();
         $('li').remove();
-
     })
-
-    $('#botao-remover').click(function(e){ 
-        $('ul li').remove('li');
+    $('#botao-remover').click(function(){ 
+        $('li').remove('li:last')
     })
-
     $('form').on('submit', function(e){
         e.preventDefault(e);
         const inputNovaTarefa= $('#nova-tarefa').val();
@@ -33,5 +30,5 @@ $(document).ready(function(){
         $(this).css({'text-decoration': 'line-through','color':'red'});
     })
 
-
 })
+
