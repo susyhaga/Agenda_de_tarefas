@@ -1,16 +1,17 @@
 $(document).ready(function(){
-7
+
 
     $('header button').click(function(){
         $('form').slideDown();
     })
 
     $('#limpar').click(function(){
-        $('li').remove('nova-tarefa');
+        $('form').slideUp();
+        $('li').remove();
 
     })
 
-    $('#botao-remover').click(function(){ 
+    $('#botao-remover').click(function(e){ 
         $('ul li').remove('li');
     })
 
@@ -34,4 +35,3 @@ $(document).ready(function(){
 
 
 })
-
