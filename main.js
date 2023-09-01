@@ -1,6 +1,5 @@
 $(document).ready(function(){
-
-
+    
     $('header button').click(function(){
         $('form').slideDown();
     })
@@ -9,17 +8,21 @@ $(document).ready(function(){
         $('form').slideUp();
         $('li').remove();
     })
+
     $('#botao-remover').click(function(){ 
         $('li').remove('li:last')
     })
+
     $('form').on('submit', function(e){
         e.preventDefault(e);
         const inputNovaTarefa= $('#nova-tarefa').val();
-        const novoItem=$('<li></li>');
+        const novoItem=$('ul');
         $(`
 
-        <div class="line-through">
-            <p> ${inputNovaTarefa}</p>
+        <div class="tarefa">
+            <li>
+                ${inputNovaTarefa}
+            </li>
         </div>
         `).appendTo(novoItem);
         $(novoItem).appendTo('ul');
@@ -29,6 +32,5 @@ $(document).ready(function(){
     $('ul').on("click","li", function(){ 
         $(this).css({'text-decoration': 'line-through','color':'red'});
     })
-
 })
 
